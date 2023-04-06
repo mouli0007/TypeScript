@@ -88,3 +88,21 @@ function addNum(x: number, y: number): number {
 }
 
 console.log(addNum(110, 210));
+
+
+// TypeScript in Functions
+// Functions !
+
+function addNum(x: number, y: number): number {
+  return x + y;
+}
+
+console.log(addNum(110, 210));
+
+function log(message: string | number | number[]): void {
+  console.log(message);
+}
+
+log("Mouli VJ");
+log(1);
+log([1, 2, 3]);
