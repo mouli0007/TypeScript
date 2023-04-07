@@ -61,6 +61,9 @@ class StateObj<T> {
 
 const store = new StateObj("Mouli VJ");
 
+const myState = new StateObj<string | number | boolean | number[]>(
+  "Can Accept Anything !"
+);
 console.log(store.state);
 store.state = "Alison";
 console.log(store.state);
