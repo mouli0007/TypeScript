@@ -107,6 +107,36 @@ const omm: AssignPrev = {
 
 console.log(omm);
 
+  
+// Awaited => Helps us with ReturnType of a Promise
+
+interface User {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+}
+
+const fetchUsers = async (): Promise<User[]> => {
+  let Finaldata_ = [];
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await response.json();
+    Finaldata_ = data;
+  } catch (err) {
+    console.log(err);
+    if (err instanceof Error) {
+      throw new Error(err.message);
+    }
+  }
+  return Finaldata_;
+};
+
+type UsersReturnType = Awaited<ReturnType<typeof fetchUsers>>;
+
+fetchUsers().then((users) => console.log(users));
+  
+  
 //  And Much more Utilities were there
 
 // Return
